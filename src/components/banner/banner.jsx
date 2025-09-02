@@ -1,11 +1,14 @@
 import React from "react"
+import "./banner.css"
 
-function Banner({ img, txt }) {
+function Banner({ image, opacity, text }) {
   return (
-    <div className="banner">
-      <img className="bannerImg" src={img} alt="Bannière" />
-      <span className="bannerTxt">{txt}</span>
-    </div>
+    <section className="banner">
+      <img className="bannerImg" src={image} style={opacity} alt="Bannière" />
+      <div className="bannerTxt">
+        <span>{text}</span>
+      </div>
+    </section>
   )
 }
 
