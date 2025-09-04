@@ -1,0 +1,49 @@
+.card, .cardImage {
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+}
+
+.card {
+    /*background-color: #ff6060;*/
+    padding: 0;
+    margin: 0;
+}
+
+.cardImage {
+    object-fit: cover;
+}
+
+.cardTitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+    position: relative;
+    width: auto;
+    height: 52px;
+    top: -76px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 0 0 10px 10px;
+    padding: 10px 10px;
+}
+
+.cardLink {
+    text-decoration: none;
+}
+
+
+/**************************/
+/*** Version responsive ***/
+/***** Media queries ******/
+
+/* Medium devices (Landscape phone to portrait tablet, less than 767px) */
+@media (max-width: 767px) {
+
+    .card, .cardImage {
+        width: 335px;
+        height: 255px;
+    }
+
+}

@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.pageError {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 139px;
+    margin: 89px 0;
+}
+
+.h1, .h2, .navBackHome {    
+    font-family: 'Montserrat', sans-serif;
+    color: #ff6060;
+    text-align: center;
+}
+
+.h1 {
+    font-size: 288px;
+    font-weight: 700;
+}
+
+.h2 {
+    font-size: 36px;
+}
+
+.navBackHome {
+    font-size: 18px;
+    color: #000000;
+}
+
+/**************************/
+/*** Version responsive ***/
+/***** Media queries ******/
+
+/* Medium devices (Landscape phone to portrait tablet, less than 767px) */
+@media (max-width: 767px) {
+    .pageError {
+        gap: 113px;
+        margin: 63px 0 89px 0;
+    }
+
+    .h1 {
+        font-size: 96px;
+    }
+
+    .h2 {
+        font-size: 18px;
+    }
+
+    .navBackHome {
+        font-size: 14px;
+    }
+
+}
