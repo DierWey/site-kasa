@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+    margin-bottom: -30px;
+}
+/* Small devices (Landscape phone to portrait tablet, less than 480px) */
+@media (max-width: 480px) {
+
+    .about {
+        padding-bottom: 19px;
+    }
+
+}

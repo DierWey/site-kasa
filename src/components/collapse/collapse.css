@@ -1,0 +1,82 @@
+* { 
+    font-family: 'Montserrat', sans-serif;   
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+}
+
+.collapse {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.collapse, .collapseHead  {
+    align-items: center;
+}
+
+.collapseHead, .collapseContent {
+    width: 68%;
+    padding: 10px 20px;
+}
+
+.collapseHead {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ff6060;
+    font-weight: 700;
+    color: white;
+    border-radius: 5px;
+}
+
+.fa-chevron-up {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.collapseContent {
+    position: static;
+    z-index: -1;
+    font-size: 18px;
+    font-weight: 400;
+    background-color: rgba(246, 246, 246, 0.45);
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(-40px);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 500px; /* valeur suffisante pour contenir ton texte */
+}
+
+
+/* Small devices (Landscape phone to portrait tablet, less than 480px) */
+@media (max-width: 480px) {
+
+    .collapse {
+        margin-bottom: 0;
+        margin-top: 19px;
+    }
+
+    .collapseHead, .collapseContent {
+        min-width: 315px;
+        padding: 10px;
+    }
+
+    .collapseTitle, .collapseContent {
+        font-size: 13px;
+    }
+
+    .fa-chevron-up {
+        font-size: 16px;
+    }
+
+}

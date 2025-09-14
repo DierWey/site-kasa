@@ -2,6 +2,7 @@ import React from "react"
 import Banner from "../components/banner/banner.jsx"
 import Image from "../images/home_banner.jpg"
 import Cards from "../components/cards/cards.jsx"
+import "./home.css"
 
 const imgOpa = {opacity: '0.4'}
 const txtBanner1 = "Chez vous, partout et ailleurs"

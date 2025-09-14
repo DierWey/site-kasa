@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.gallery {
+    max-width: 100%;
+    min-height: auto;
+    border-radius: 25px;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin: 0 100px;
+}
+
+
+/**************************/
+/*** Version responsive ***/
+/***** Media queries ******/
+
+/* Medium devices (Landscape phone to portrait tablet, less than 767px) */
+@media (max-width: 767px) {    
+    .gallery {
+        background-color: white;
+        gap: 27px;
+        padding-top: 27px;
+        padding-bottom: 27px;
+        margin: 0px 50px;
+    }
+}
