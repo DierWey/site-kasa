@@ -1,6 +1,6 @@
 import React from "react"
 import Banner from "../components/banner/banner.jsx"
-import Image from "../images/home_banner.jpg"
+import Image from "../images/home_banner.png"
 import Cards from "../components/cards/cards.jsx"
 import "./home.css"
 

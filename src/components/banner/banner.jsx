@@ -1,7 +1,7 @@
 import React from "react"
 import "./banner.css"
 
-function Banner({ image, opacity, text1, text2 }) {
+function Banner({ image, opacity, text1 }) {
   return (
     <section className="banner">
         <img className="bannerImg" src={image} style={opacity} alt="Bannière" />

@@ -4,7 +4,8 @@
 }
 
 .about {
-    margin-bottom: -30px;
+    max-width: 1440px;
+    margin-bottom: -40px;
 }
 /* Small devices (Landscape phone to portrait tablet, less than 480px) */
 @media (max-width: 480px) {

@@ -1,6 +1,5 @@
 import React from "react"
 import { useState } from "react"
-import "./collapse.css"
 
 function Collapse({title, content}) {
 
@@ -9,15 +8,17 @@ function Collapse({title, content}) {
     const toggleText = () => {
         setVisible(!visible);
         setRotation(visible ? "none" : "rotate(180deg)")
-    };
+    }
 
     return (
         <section className="collapse">
             <div className="collapseHead">
-                <h2 className="collapseTitle">{title}</h2>
+                <span className="collapseTitle">{title}</span>
                 <i onClick={toggleText} className="fa-solid fa-chevron-up" style={{transform: rotation}} ></i>
             </div>
-            <p className={`collapseContent fade ${visible ? "show" : ""}`}>{content}</p>
+            <div className={`collapseContent fade ${visible ? "show" : ""}`}>
+                <div className="contentContainer">{content}</div>
+            </div>
         </section>        
     )
 }
