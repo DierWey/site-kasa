@@ -16,10 +16,28 @@ $full-screen: 100vw;
     border-radius: 10px;
     text-align: center;
     padding: 3px 5px;
+    @media (max-width: 767px) {
+        min-width: 95px;
+        border-radius: 7px;
+    }
+    @media (max-width: 480px) {
+        min-width: 74px;
+        border-radius: 5px;
+    }
     .tagButton{
         font-weight: 700;
         font-size: 14px;
         color: $font-white;
         vertical-align: middle;
+        @media (max-width: 767px) {
+            position: relative;
+            top: -3px;
+            font-size: 12px;
+            padding: 1px 5px;
+        }
+        @media (max-width: 480px) {
+            top: -5px;
+            font-size: 10px;
+        }
     }
 }

@@ -1,7 +1,7 @@
 import React from "react"
 import { NavLink } from "react-router-dom"
 import Location from "../../data/logements.json"
-import "./cards.css"
+import "./cards.scss"
 
 function Cards() {
     return (

@@ -1,0 +1,42 @@
+$main-font: 'Montserrat', sans-serif;
+$font-white: white;
+$full-screen: 100vw;
+
+@mixin flexbox-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    @include flexbox-column-center;
+    width: $full-screen;
+    background-color: black;
+    color: $font-white;
+    margin-top: 50px;
+    @media (max-width: 480px) {
+        margin-top: 20px;
+    }
+    .footerImg {
+        padding-top: 66px;
+        @media (max-width: 767px) {
+            padding-top: 66px;
+        }
+    }
+    .footerTxt {
+        font-size: 24px;
+        padding: 50px 0 29px 0;
+        @media (max-width: 767px) {
+            width: 134px;
+            font-size: 12px;
+            text-align: center;
+            padding: 17px 0 63px 0;
+        }
+        .fa-copyright {
+            font-size: 20px;
+            @media (max-width: 767px) {
+                font-size: 10px;
+            }
+        }
+    }
+}

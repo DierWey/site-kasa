@@ -2,7 +2,7 @@ import React from "react"
 import Banner from "../components/banner/banner.jsx"
 import Image from "../images/about_banner.png"
 import Collapse from "../components/collapse/collapse.jsx"
-import "./about.css"
+import "./about.scss"
 import "../components/collapse/collapse.scss"
 
 const imgOpa = {opacity: '0.7'}

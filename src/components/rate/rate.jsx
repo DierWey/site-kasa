@@ -5,10 +5,10 @@ function Rate ({grade}) {
 const stars = []
 
 for (let i = 1; i < 6; i++) {
-    stars.push (grade < i ? (
-        <div key={i}><i className="fa-solid fa-star starInactive"></i></div>        
+    stars.push (i <= grade ? (
+        <div key={i}><i className="fa-solid fa-star starActive"></i></div>        
         ) : (
-        <div key={i}><i className="fa-solid fa-star starActive"></i></div>
+        <div key={i}><i className="fa-solid fa-star starInactive"></i></div>
         ))
 }
 

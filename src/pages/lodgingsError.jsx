@@ -1,32 +1,23 @@
-import {useEffect} from "react"
-import { useParams, useNavigate } from "react-router-dom"
+import React from "react"
+import { useParams, Navigate } from "react-router-dom"
 import Location from "../data/logements.json"
 import Carousel from "../components/carousel/carousel.jsx"
 import Collapse from "../components/collapse/collapse.jsx"
 import Tag from "../components/tags/tag.jsx"
 import Rate from "../components/rate/rate.jsx"
+import ErrorBoundary from "../components/errorBoundary/errorBoundary.jsx"
 import Error from "./error.jsx"
 import "./lodgings.scss"
 
 function Lodgings() {
 
-  
   /** Récupèration de l'id du logement correspondant à la card cliquée **/
   const { id } = useParams()
-
+  console.log (id)
+  
   /** Récupération de l'objet correspondant à l'id récupéré plus haut **/
   let currentLocation = Location.find((loc) => loc.id === id)
-  
-  const navigate = useNavigate()
-
-  useEffect (()=>{
-    console.log("useEffect")
-    if (typeof currentLocation === "undefined") {
-    console.log("Erreur")
-    navigate ("/notFound")
-
-    }
-  })
+  console.log (currentLocation)
 
   const pictures = currentLocation.pictures
 
@@ -50,18 +41,12 @@ function Lodgings() {
 
   const description = currentLocation.description
 
-  /* Gestion de l'erreur */
-  
-  if (typeof currentLocation === "undefined") {
-    console.log("Erreur")
-    /*return <Error />*/
-    /*<Navigate to = "./error.jsx" />*/
-    /* useNavigate ? redirect ? */
 
-  } else {
+  return (
+    <>
+      {/* ErrorBoundary */}
+      <ErrorBoundary>
 
-    return (
-      <>
         <div className="lodgings">
           <div className="lodgingsCarousel">
             <Carousel slider={pictures}/>
@@ -91,9 +76,12 @@ function Lodgings() {
             </div>
           </section>
         </div>
-      </>
-    )
-  }
+
+      </ErrorBoundary>
+
+    </>
+  )
+
 }
 
 export default Lodgings

@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 87%;
+    max-width: 1240px;
+    margin-bottom: -30px;
+    @media (max-width: 480px) {
+        min-width: 335px;
+        padding-bottom: 10px;
+        gap: 0;
+    }
+}

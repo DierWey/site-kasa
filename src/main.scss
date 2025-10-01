@@ -13,69 +13,9 @@ body {
     padding: 0;
     margin: 0;
     font-family: $main-font;
+
     #root {
         @include flexbox-column-center;
-        .header {
-            width: 100%;
-            max-width: 1440px;
-            display: flex;
-            justify-content: space-between;
-            padding-top: 45px;
-            margin-bottom: 50px;
-            @media (max-width: 767px) {
-                padding-top: 50px;
-                margin-bottom: 27px;
-            }
-            @media (max-width: 480px) {
-                width: 335px;
-                margin-bottom: 20px;
-                padding-top: 20px;
-            }
-            .headerImg {
-                margin-left: 100px;
-                @media (max-width: 767px) {
-                    margin-left: 50px;
-                    height: 47px;
-                }
-                @media (max-width: 480px) {
-                    margin-left: 0px;                
-                }
-            }
-            .headerNav {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                width: 309px;
-                gap: 37px;
-                margin-right: 100px;
-                @media (max-width: 767px) {
-                    justify-content: end;
-                    width: 190px;
-                    gap: 10px;
-                    margin-right: 50px;
-                }
-                @media (max-width: 480px) {
-                    margin-right: 0px;
-                }
-                .navHome, .navAbout {
-                    width: 136px;
-                    text-align: end;
-                    color: black;
-                    font-size: 24px;
-                    @media (max-width: 767px) {
-                        width: 80px;
-                        font-size: 18px;                    
-                    }
-                    @media (max-width: 480px) {
-                        width: 55px;
-                        font-size: 12px;
-                    }
-                }
-                .navHome {
-                    text-decoration: underline;
-                }
-            }
-        }
 
         main {
             width: $full-screen;
@@ -85,38 +25,6 @@ body {
             }
         }
 
-        .footer {
-            @include flexbox-column-center;
-            width: $full-screen;
-            background-color: black;
-            color: $font-white;
-            margin-top: 50px;
-            @media (max-width: 480px) {
-                margin-top: 20px;
-            }
-            .footerImg {
-                padding-top: 66px;
-                @media (max-width: 767px) {
-                    padding-top: 66px;
-                }
-            }
-            .footerTxt {
-                font-size: 24px;
-                padding: 50px 0 29px 0;
-                @media (max-width: 767px) {
-                    width: 134px;
-                    font-size: 12px;
-                    text-align: center;
-                    padding: 17px 0 63px 0;
-                }
-                .fa-copyright {
-                    font-size: 20px;
-                    @media (max-width: 767px) {
-                        font-size: 10px;
-                    }
-                }
-            }
-        }
-
     }
+    
 }

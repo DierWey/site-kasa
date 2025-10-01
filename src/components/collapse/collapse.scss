@@ -8,79 +8,91 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-bottom: 30px;
-}
-
-.collapse, .collapseHead  {
     align-items: center;
-}
-
-.collapseHead, .collapseContent {
-    width: 68%;
-    padding: 10px 20px;
-}
-
-.collapseHead {
-    display: flex;
-    justify-content: space-between;
-    background-color: #ff6060;
-    font-size: 24px;
-    font-weight: 700;
-    color: white;
-    border-radius: 5px;
-}
-
-.fa-chevron-up {
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.collapseContent {
-    position: static;
-    z-index: -1;
-    font-size: 18px;
-    font-weight: 400;
-    background-color: rgba(246, 246, 246, 0.45);
-}
-
-.fade {
-  opacity: 0;
-  transform: translateY(-40px);
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
-}
-
-.show {
-  opacity: 1;
-  transform: translateY(0);
-  max-height: 500px; /* valeur suffisante pour contenir ton texte */
-}
-
-
-/* Small devices (Landscape phone to portrait tablet, less than 480px) */
-@media (max-width: 480px) {
-
-    .collapse {
+    @media (max-width: 480px) {
+        width: 100%;
         height: auto;
         margin: 0px;
     }
 
     .collapseHead, .collapseContent {
-        min-width: 315px;        
-        padding: 10px;
+        width: 100%;
+        max-width: 1024px;
+        padding: 10px 0;
+        @media (max-width: 480px) {
+            min-width: 335px; 
+        }
+    }
+
+    .collapseHead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ff6060;
+        font-size: 24px;
+        color: white;
+        border-radius: 5px;
+        .collapseTitle {
+            font-weight: 700;
+            margin-left: 20px;
+            @media (max-width: 767px) {
+                font-size: 18px;
+            }
+            @media (max-width: 480px) {
+                font-size: 13px;
+            }
+        }
+        .fa-chevron-up {
+            cursor: pointer;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+            @media (max-width: 767px) {
+                font-size: 20px;
+            }
+            @media (max-width: 480px) {
+                font-size: 16px;
+            }
+        }
     }
 
     .collapseContent {
+        position: static;
+        z-index: -1;
+        font-size: 18px;
+        background-color: rgba(246, 246, 246, 0.45);
+        @media (max-width: 767px) {
+            font-size: 16px;
+        }
+        @media (max-width: 480px) {
+            font-size: 13px;
+        }
+        .contentContainer {
+        font-weight: 400;
+        margin: 0 20px;
+        }
+    }
+
+    .fade {
+        opacity: 0;
+        transform: translateY(-40px);
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, transform 0.3s ease, max-height 0.3s ease, margin-bottom 0.3s ease;
+    }
+
+    .show {
+        opacity: 1;
+        transform: translateY(0);
+        max-height: 500px; /* valeur suffisante pour contenir le texte */
         margin-bottom: 20px;
     }
 
-    .collapseTitle, .collapseContent {
-        font-size: 13px;
-    }
-
-    .fa-chevron-up {
-        font-size: 16px;
-    }
-
 }
+
+
+
+
+
+
+
+
