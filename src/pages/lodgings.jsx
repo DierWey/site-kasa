@@ -5,7 +5,6 @@ import Carousel from "../components/carousel/carousel.jsx"
 import Collapse from "../components/collapse/collapse.jsx"
 import Tag from "../components/tags/tag.jsx"
 import Rate from "../components/rate/rate.jsx"
-import Error from "./error.jsx"
 import "./lodgings.scss"
 
 function Lodgings() {
@@ -15,85 +14,67 @@ function Lodgings() {
   const { id } = useParams()
 
   /** Récupération de l'objet correspondant à l'id récupéré plus haut **/
-  let currentLocation = Location.find((loc) => loc.id === id)
+  const currentLocation = Location.find((loc) => loc.id === id)
   
   const navigate = useNavigate()
 
-  useEffect (()=>{
-    console.log("useEffect")
-    if (typeof currentLocation === "undefined") {
-    console.log("Erreur")
-    navigate ("/notFound")
-
+  useEffect(() => {
+    if (currentLocation === undefined) {
+      navigate('/notFound')
     }
+  }, [currentLocation, navigate])
+
+  if (currentLocation === undefined) {
+    return null; // or a loading spinner
+  }
+
+  const { pictures, title, location, tags, host, rating, equipments, description } = currentLocation
+
+  const tagComponents = tags.map((tag, i) => {
+    return <Tag key={i} label={tag} />
   })
 
-  const pictures = currentLocation.pictures
-
-  const title = currentLocation.title
-  const location = currentLocation.location
-  const tags = currentLocation.tags.map((tags, i) => {
-    return <Tag key={i} label={tags} />
-  })
-
-  const nameHost = currentLocation.host.name
-  const pictureHost = currentLocation.host.picture
-  const grade = currentLocation.rating
-    
-  const equipments = currentLocation.equipments.map((equipment, i) => {
+  const equipmentList = equipments.map((equipment, i) => {
     return (
       <ul key={i}>
         <li>{equipment}</li>
       </ul>
     )
-  })
+  });
 
-  const description = currentLocation.description
-
-  /* Gestion de l'erreur */
-  
-  if (typeof currentLocation === "undefined") {
-    console.log("Erreur")
-    /*return <Error />*/
-    /*<Navigate to = "./error.jsx" />*/
-    /* useNavigate ? redirect ? */
-
-  } else {
-
-    return (
-      <>
-        <div className="lodgings">
-          <div className="lodgingsCarousel">
-            <Carousel slider={pictures}/>
-          </div>
-          <section className="lodgingsFeatures">
-            <div className="lodgingsTitleLocation">
-              <h1>{title}</h1>
-              <h2>{location}</h2>
-              <div className="lodgingsTags">{tags}</div>          
-            </div>
-            <div className="lodgingsHostings">
-              <div className="host">
-                <span className="hostName">{nameHost}</span>
-                <img className="hostImg" src={pictureHost} alt=""></img>
-              </div>
-              <div className="rate">
-                < Rate grade={grade}/>
-              </div>
-            </div>
-          </section>
-          <section className="detailsCollapses">
-            <div className="collapseDescription">
-              <Collapse title="Description" content={description}/>
-            </div>
-            <div className="collapseEquipments">
-              <Collapse title="Équipements" content={equipments}/>
-            </div>
-          </section>
+  return (
+    <>
+      <div className="lodgings">
+        <div className="lodgingsCarousel">
+          <Carousel slider={pictures}/>
         </div>
-      </>
-    )
-  }
+        <section className="lodgingsFeatures">
+          <div className="lodgingsTitleLocation">
+            <h1>{title}</h1>
+            <h2>{location}</h2>
+            <div className="lodgingsTags">{tagComponents}</div>          
+          </div>
+          <div className="lodgingsHostings">
+            <div className="host">
+              <span className="hostName">{host.name}</span>
+              <img className="hostImg" src={host.picture} alt=""></img>
+            </div>
+            <div className="rate">
+              < Rate grade={rating}/>
+            </div>
+          </div>
+        </section>
+        <section className="detailsCollapses">
+          <div className="collapseDescription">
+            <Collapse title="Description" content={description}/>
+          </div>
+          <div className="collapseEquipments">
+            <Collapse title="Équipements" content={equipmentList}/>
+          </div>
+        </section>
+      </div>
+    </>
+  )
 }
 
 export default Lodgings

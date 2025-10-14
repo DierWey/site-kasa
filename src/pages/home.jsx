@@ -5,12 +5,13 @@ import Cards from "../components/cards/cards.jsx"
 import "./home.scss"
 
 const imgOpa = {opacity: '0.4'}
-const txtBanner1 = "Chez vous, partout et ailleurs"
+const txtBanner1 = "Chez vous,"
+const txtBanner2 = "partout et ailleurs"
 
 function Home() {
   return (
     <>
-      <Banner image={Image} opacity={imgOpa} text1={txtBanner1}/>    
+      <Banner image={Image} opacity={imgOpa} text1={txtBanner1} text2={txtBanner2}/>    
       <section className="gallery">
         <Cards />
       </section>
