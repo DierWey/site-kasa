@@ -10,11 +10,11 @@ import Footer from './components/footer/footer.jsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <header className="header">
         <Header />
       </header>
-      <main> 
+      <main>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/pages/about" element={<About />} />
