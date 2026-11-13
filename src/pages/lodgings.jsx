@@ -15,7 +15,7 @@ function Lodgings() {
 
   /** Récupération de l'objet correspondant à l'id récupéré plus haut **/
   const currentLocation = Location.find((loc) => loc.id === id)
-  
+
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -25,7 +25,7 @@ function Lodgings() {
   }, [currentLocation, navigate])
 
   if (currentLocation === undefined) {
-    return null; // or a loading spinner
+    return null
   }
 
   const { pictures, title, location, tags, host, rating, equipments, description } = currentLocation
